@@ -51,6 +51,7 @@ public class SoundManager : MonoBehaviour
         // Use this instead
         AudioSource theSource = GetComponent<AudioSource>();
         soundEffectAudio = theSource;
+
     }
 
     // Any script can call this to play a sound effect
