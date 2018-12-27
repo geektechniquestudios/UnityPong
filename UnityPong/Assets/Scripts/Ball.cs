@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Ball : MonoBehaviour
 {
     // Balls default movement speed
-    public float speed = 50;
+    public float speed = 30;
 
     // The balls Rigidbody component
     private Rigidbody2D rigidBody;
