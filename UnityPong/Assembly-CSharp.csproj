@@ -62,8 +62,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\AIPaddle.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\KeepPlayingMusic.cs" />
     <Compile Include="Assets\Scripts\MovePaddle.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\SplashScreen.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/nope/Desktop/GitRepos/UnityPong/UnityPong/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

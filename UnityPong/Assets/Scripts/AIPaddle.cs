@@ -18,7 +18,6 @@ public class AIPaddle : MonoBehaviour
         rigidBody = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void FixedUpdate() // used for rigidbody updates as opposed to just using "Update"
     {
         if(theBall.transform.position.y > transform.position.y)

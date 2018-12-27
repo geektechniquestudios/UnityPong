@@ -5,9 +5,8 @@ using UnityEngine.UI;
 
 public class Ball : MonoBehaviour
 {
-
     // Balls default movement speed
-    public float speed = 30;
+    public float speed = 50;
 
     // The balls Rigidbody component
     private Rigidbody2D rigidBody;
@@ -15,31 +14,17 @@ public class Ball : MonoBehaviour
     // Used to play sound effects
     private AudioSource audioSource;
 
-    // Use this for initialization
     void Start()
     {
-
-        // Get reference to the ball Rigidbody
         rigidBody = GetComponent<Rigidbody2D>();
-
-        // When the ball is created move it to
-        // the right (1,0) at the desired speed
         rigidBody.velocity = Vector2.right * speed;
-
     }
 
-    // Called every time a ball collides with something
-    // the object it hit is passed as a parameter
-    void OnCollisionEnter2D(Collision2D col)
+    void OnCollisionEnter2D(Collision2D col)//called when collision occurs
     {
-
-        // If the LeftPaddle or RightPaddle hit the
-        // ball simulate the ricochet
         if ((col.gameObject.name == "LeftPaddle") || (col.gameObject.name == "RightPaddle"))
         {
-
             HandlePaddleHit(col);
-
         }
 
         // WallBottom or WallTop
@@ -73,11 +58,6 @@ public class Ball : MonoBehaviour
 
     void HandlePaddleHit(Collision2D col)
     {
-
-        // Find y for the ball vector based
-        // on where the ball hit the paddle
-        // Above the center y angles up
-        // Below the center y angles down
         float y = BallHitPaddleWhere(transform.position,
             col.transform.position,
             col.collider.bounds.size.y);
@@ -85,8 +65,6 @@ public class Ball : MonoBehaviour
         // Vector ball moves to
         Vector2 dir = new Vector2();
 
-        // Go left or right on the x axis
-        // depending on which panel was hit
         if (col.gameObject.name == "LeftPaddle")
         {
             dir = new Vector2(1, y).normalized;
@@ -97,8 +75,6 @@ public class Ball : MonoBehaviour
             dir = new Vector2(-1, y).normalized;
         }
 
-        // Change the velocity / direction of ball
-        // You assign a vector to velocity
         rigidBody.velocity = dir * speed;
 
         // Play sound effect
