@@ -1,2 +1,3 @@
 # UnityPong
-We all know pong. I am learning Unity and this project will serve as a platform for my learning.
+
+This is a pretty basic game. It has an AI to play against, and it keeps score.
